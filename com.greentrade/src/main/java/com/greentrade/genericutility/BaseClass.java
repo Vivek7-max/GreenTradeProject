@@ -63,7 +63,7 @@ public WebDriver driver;
 		}		
 		driver.manage().window().maximize();
 		wLib.waitForElementInDOM(driver);
-		System.out.println("The browser is launched...!");
+		System.out.println("The"+BROWSER+" browser is launched...!");
 	}	
 	@BeforeMethod(groups = {"smokeTest","regressionTest"})
 	public void login() throws Throwable
