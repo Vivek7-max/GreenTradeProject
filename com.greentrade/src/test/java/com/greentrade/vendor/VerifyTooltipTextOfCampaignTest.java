@@ -30,11 +30,10 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class VerifyTooltipTextOfCampaignTest extends BaseClass{
 	@Test
 	public void verifyTooltipTextOfCampaignTest() throws Throwable {
-		ExcelUtlity eLib = new ExcelUtlity();
-
 		/*Create Random Number*/
 		int randomNum=jLib.getRandomNumber();	
 		/*Read required Data from file*/
+		ExcelUtlity eLib = new ExcelUtlity();
 		String testScriptdataFilePath = fLib.getFilePathFromPropertiesFile("testScriptdatafilePath");
 		String vendorName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "vendor", "TC_35","Vendor Name")+randomNum;
 		String productName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "product", "TC_35","Product Name")+randomNum;
@@ -45,7 +44,6 @@ public class VerifyTooltipTextOfCampaignTest extends BaseClass{
 		HomePage homePage=new HomePage(driver);
 		wLib.mouseOverOnElement(driver, homePage.getMoreLink());
 		homePage.getVendorsLink().click();
-
 		VendorsPage vendorsPage=new VendorsPage(driver);
 		vendorsPage.getCreateVendorLookupImg();
 		CreateVendorPage createVendorPage=new CreateVendorPage(driver);
@@ -80,11 +78,11 @@ public class VerifyTooltipTextOfCampaignTest extends BaseClass{
 		wLib.swithToWindow(driver, "Campaign");
 		createCampaignPage.getSaveBtn().click();
 		System.out.println("Campaign Created Successfully..!");
+		
+		/*Change Campaign setting*/
 		campaignsPage.getCampaignsSettingLookupImg().click();
-		
 		AdminSettingPage adminSettingPage = new AdminSettingPage(driver);
-		adminSettingPage.getTooltipManagementLink().click();
-		
+		adminSettingPage.getTooltipManagementLink().click();	
 		WebElement selectfield = adminSettingPage.getSelectFieldDropDown();
 		wLib.select(selectfield, "Campaign Name");
 		Thread.sleep(2000);
@@ -100,18 +98,10 @@ public class VerifyTooltipTextOfCampaignTest extends BaseClass{
 		WebElement inDropDown = campaignsPage.getInDropdown();
 		wLib.select(inDropDown, "Campaign Name");
 		campaignsPage.getSearchNowBtn().click();
-		
-		/**/
-		
-//		WebElement campaignName = campPage.getCampLink();
-//		wLib.mouseOverOnElement(driver, campaignName);
-//		wLib.waitForElement(driver, campPage.getToolTip());
-//		WebElement ttip=campPage.getToolTip();
-//		String actualText = ttip.getText();
-//		System.out.println(actualText);
-//		/**/
+
 		WebElement searchedCampaign = campaignsPage.getSearchedCampaignLink();
 		wLib.mouseOverOnElement(driver, searchedCampaign);
+		Thread.sleep(2000);
 		wLib.waitForElement(driver, campaignsPage.getToolTip());
 		WebElement ttip=campaignsPage.getToolTip();
 		String actualText = ttip.getText();
@@ -121,7 +111,7 @@ public class VerifyTooltipTextOfCampaignTest extends BaseClass{
 		System.out.println("Product text: "+productText);
 		
 		Assert.assertTrue(actualText.contains(productText), "Tooltip text for campaign is not verified Fail");
-		Reporter.log("Tooltip text for campaign is verified PASS");
+		Reporter.log("Tooltip text for campaign is verified PASS", true);
 	}
 }
 

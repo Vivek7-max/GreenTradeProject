@@ -82,15 +82,15 @@ public WebDriver driver;
 	@AfterMethod(groups = {"smokeTest","regressionTest"})
 	public void logout()
 	{
-		HomePage hp=new HomePage(driver);
-		hp.setLogout(wLib, driver);
+		HomePage homePage=new HomePage(driver);
+		homePage.signOut(wLib, driver);
 		System.out.println("Logged Out...!");
 	}
 	
 	@AfterClass(groups = {"smokeTest","regressionTest"})
 	public void closeBrowser()
 	{
-		driver.quit();
+		driver.close();
 		System.out.println("The browser is closed...!");
 	}
 	

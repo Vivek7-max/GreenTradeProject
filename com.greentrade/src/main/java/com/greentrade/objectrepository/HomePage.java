@@ -35,20 +35,18 @@ public class HomePage {
 	@FindBy(linkText = "Quotes")
 	private WebElement qotesLink;
 	
-	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
+	@FindBy(xpath="//img[@src='themes/softed/images/user.PNG']")
 	private WebElement signOutLookupImg;
 	
-	@FindBy(linkText  = "Sign Out")
-	private WebElement signOutLink;
+	@FindBy(xpath="//a[.='Sign Out']")
+	private WebElement signoutLink;
 	
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void setLogout(WebActionUtility wLib, WebDriver driver) {
-		wLib.mouseOverOnElement(driver, signOutLookupImg);
-		signOutLink.click();
-	}
+	
+	
 
 	public WebElement getMoreLink() {
 		return moreLink;
@@ -90,7 +88,9 @@ public class HomePage {
 		return signOutLookupImg;
 	}
 
-	public WebElement getSignOutLink() {
-		return signOutLink;
+	public void signOut(WebActionUtility wLib,WebDriver driver)
+	{
+		wLib.moveToElementAndPause(driver, signOutLookupImg);
+		signoutLink.click();		
 	}
 }
