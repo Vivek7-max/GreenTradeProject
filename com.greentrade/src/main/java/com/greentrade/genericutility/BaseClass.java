@@ -43,17 +43,17 @@ public WebDriver driver;
 	{
 
 		String commonDataFilePath=fLib.getFilePathFromPropertiesFile("commonDataFilePath");
-		String BROWSER=fLib.getDataFromProperties(commonDataFilePath, "browser");
-		if(BROWSER.equalsIgnoreCase("chrome"))
+		String browser=fLib.getDataFromProperties(commonDataFilePath, "browser");
+		if(browser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();
 		}
-		else if (BROWSER.equalsIgnoreCase("firefox")) {
+		else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();
 		}
-		else if (BROWSER.equalsIgnoreCase("edge")) {
+		else if (browser.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver=new EdgeDriver();
 		}
@@ -63,7 +63,7 @@ public WebDriver driver;
 		}		
 		driver.manage().window().maximize();
 		wLib.waitForElementInDOM(driver);
-		System.out.println("The"+BROWSER+" browser is launched...!");
+		System.out.println("The "+browser+" browser is launched...!");
 	}	
 	@BeforeMethod(groups = {"smokeTest","regressionTest"})
 	public void login() throws Throwable
