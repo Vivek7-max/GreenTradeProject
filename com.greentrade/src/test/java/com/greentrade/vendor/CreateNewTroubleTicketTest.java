@@ -36,7 +36,6 @@ public class CreateNewTroubleTicketTest extends BaseClass {
 		String orgName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "org", "TC_34","Organization Name")+randomNum;
 		String lastName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "contact", "TC_34","Last Name")+randomNum;
 		String title = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "troubleticket", "TC_34","Title")+randomNum;
-//		String vendorName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "vendor", "TC_34","Vendor Name")+randomNum;
 		
 		/*Create Vendor*/
 		HomePage homePage=new HomePage(driver);
