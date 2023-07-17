@@ -106,13 +106,13 @@ public class CreateNewOpportunityTest extends BaseClass {
 		System.out.println("Opportunity Created successfully..!");
 		
 		OpportunityInfoPage oip = new OpportunityInfoPage(driver);
-		String actualCampaign = oip.getCreatedCampaign().getText();
+		String actualCampaign = oip.getCreatedCampaign().getText().trim();
 		String expectedCampaign = campaignName;
 		
-		String actualOpportunity=oip.getCreatedOpportunity().getText();
+		String actualOpportunity=oip.getCreatedOpportunity().getText().trim();
 		String expectedOpportunity = opportunityName;
 		
-		String actualOrg=oip.createdOrg(driver, orgName).getText();
+		String actualOrg=oip.createdOrg(driver, orgName).getText().trim();
 		String expectedOrg = orgName;
 		
 		System.out.println("actualCampaign: "+actualCampaign);

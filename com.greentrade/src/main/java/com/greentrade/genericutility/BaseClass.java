@@ -40,15 +40,13 @@ public WebDriver driver;
 		System.out.println("Connected to database...!");
 	}
 	
-	@Parameters("browser")
+	//@Parameters("browser")
 	@BeforeClass
-	public void OpenBrowser(String browser) throws Throwable
+	public void OpenBrowser() throws Throwable
 	{
-
 		String commonDataFilePath=fLib.getFilePathFromPropertiesFile("commonDataFilePath");
 		
-		//String browser = System.getProperty("browser");
-		//String browser=fLib.getDataFromProperties(commonDataFilePath, "browser");
+		String browser = System.getProperty("browser", fLib.getDataFromProperties(commonDataFilePath, "browser"));
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			WebDriverManager.chromedriver().setup();
