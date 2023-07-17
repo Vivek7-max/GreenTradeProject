@@ -11,6 +11,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 
 import com.greentrade.objectrepository.HomePage;
@@ -19,6 +20,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 public WebDriver driver;
+public static WebDriver sdriver;
+
 	
 	//Create instance of all generic utilities
 	public FileUtlity fLib=new FileUtlity();
@@ -65,6 +68,7 @@ public WebDriver driver;
 			driver=new ChromeDriver();
 		}		
 		driver.manage().window().maximize();
+		sdriver = driver;
 		wLib.waitForElementInDOM(driver);
 		System.out.println("The "+browser+" browser is launched...!");
 	}	

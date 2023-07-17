@@ -2,6 +2,7 @@ package com.greentrade.vendor;
 
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.greentrade.genericutility.BaseClass;
@@ -22,7 +23,7 @@ import com.greentrade.objectrepository.SearchOrgPage;
 import com.greentrade.objectrepository.SearchProductPage;
 import com.greentrade.objectrepository.SearchVendorPage;
 import com.greentrade.objectrepository.VendorsPage;
-
+@Listeners(com.greentrade.genericutility.ListenerImplementation.class)
 public class CreateNewOpportunityTest extends BaseClass {
 	@Test
 	public void createNewOpportunityTest() throws Throwable {
@@ -46,6 +47,7 @@ public class CreateNewOpportunityTest extends BaseClass {
 		CreateVendorPage createVendorPage=new CreateVendorPage(driver);
 		createVendorPage.createVendor(vendorName);
 		System.out.println("Vendor Created Successfully..!");
+		Assert.fail();
 		
 		/*Create Product*/
 		homePage.getProductsLink().click();

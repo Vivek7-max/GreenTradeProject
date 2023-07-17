@@ -1,12 +1,16 @@
 package com.greentrade.genericutility;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -272,5 +276,23 @@ public class WebActionUtility {
 	   public void acceptAlert(WebDriver driver) {
 			  driver.switchTo().alert().accept();
 		   }
-
+	   public String takeScreenShot(WebDriver driver, String screenShotName) {
+		   TakesScreenshot takeScreenshot = (TakesScreenshot) driver;
+		   File src = takeScreenshot.getScreenshotAs(OutputType.FILE);
+		   File dest = new File("./Screenshot/"+screenShotName+".png");
+		   try {
+			FileUtils.copyFile(src, dest);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return screenShotName;
+	   }
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 }
