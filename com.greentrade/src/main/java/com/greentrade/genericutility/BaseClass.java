@@ -1,6 +1,6 @@
 package com.greentrade.genericutility;
 
-import java.sql.SQLException;
+import java.sql.SQLException; 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,6 +11,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
 import com.greentrade.objectrepository.HomePage;
 import com.greentrade.objectrepository.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -25,7 +27,7 @@ public WebDriver driver;
 	public JavaUtlity jLib=new JavaUtlity();
 	public DataBaseUtility dbLib=new DataBaseUtility();
 	
-	
+	@Parameters("browser")
 	@BeforeSuite(groups = {"smokeTest","regressionTest"})
 	public void connectToDataBase()
 	{
@@ -38,13 +40,14 @@ public WebDriver driver;
 		System.out.println("Connected to database...!");
 	}
 	
+	@Parameters("browser")
 	@BeforeClass
-	public void OpenBrowser() throws Throwable
+	public void OpenBrowser(String browser) throws Throwable
 	{
 
 		String commonDataFilePath=fLib.getFilePathFromPropertiesFile("commonDataFilePath");
 		
-		String browser = System.getProperty("browser");
+		//String browser = System.getProperty("browser");
 		//String browser=fLib.getDataFromProperties(commonDataFilePath, "browser");
 		if(browser.equalsIgnoreCase("chrome"))
 		{

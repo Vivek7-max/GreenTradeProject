@@ -3,17 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.greentrade.vendor.CreateNewOpportunityTest">
+      <class name="com.greentrade.vendor.CreateNewQuotataionTest">
         <methods>
           <include name="closeDBConnection"/>
+          <include name="createNewQuotataionTest"/>
           <include name="login"/>
           <include name="OpenBrowser"/>
-          <include name="createNewOpportunityTest"/>
           <include name="closeBrowser"/>
           <include name="connectToDataBase"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.greentrade.vendor.CreateNewOpportunityTest -->
+      </class> <!-- com.greentrade.vendor.CreateNewQuotataionTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -90,7 +90,7 @@ public class HomePage {
 
 	public void signOut(WebActionUtility wLib,WebDriver driver)
 	{
-		wLib.moveToElementAndPause(driver, signOutLookupImg);
+		wLib.mouseOverOnElement(driver, signOutLookupImg);
 		signoutLink.click();		
 	}
 }

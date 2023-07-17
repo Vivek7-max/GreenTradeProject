@@ -32,16 +32,11 @@ public class CreateNewOpportunityTest extends BaseClass {
 		ExcelUtlity eLib = new ExcelUtlity();
 		String testScriptdataFilePath = fLib.getFilePathFromPropertiesFile("testScriptdatafilePath");
 		String vendorName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "vendor", "TC_33","Vendor Name")+randomNum;
-		System.out.println(vendorName);
 		String productName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "product", "TC_33","Product Name")+randomNum;
-		System.out.println(productName);
 		String orgName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "org", "TC_33","Organization Name")+randomNum;
-		System.out.println(orgName);
 		String campaignName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "campaign", "TC_33","Campaign Name")+randomNum;
-		System.out.println(campaignName);
 		String opportunityName = eLib.getDataFromExcelBasedTestId(testScriptdataFilePath, "opportunity", "TC_33","Opportunity Name")+randomNum;
-		System.out.println(opportunityName);	
-		/*
+	
 		/*Create Vendor*/
 		HomePage homePage=new HomePage(driver);
 		wLib.mouseOverOnElement(driver, homePage.getMoreLink());

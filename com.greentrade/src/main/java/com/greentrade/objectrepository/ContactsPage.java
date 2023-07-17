@@ -13,7 +13,7 @@ public class ContactsPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void getCreateOrganizationLookupImg() {
+	public void getCreateContactLookupImg() {
 		createContactsLookupImg.click();
 	}
 	

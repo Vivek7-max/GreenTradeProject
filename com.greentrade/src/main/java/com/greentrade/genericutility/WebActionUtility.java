@@ -266,6 +266,11 @@ public class WebActionUtility {
 		   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
 		   wait.until(ExpectedConditions.urlContains(partialUrl));
 	   }
-	
+	   public void dismissAlert(WebDriver driver) {
+		  driver.switchTo().alert().dismiss();
+	   }
+	   public void acceptAlert(WebDriver driver) {
+			  driver.switchTo().alert().accept();
+		   }
 
 }
