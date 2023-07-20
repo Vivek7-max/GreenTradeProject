@@ -10,6 +10,7 @@ public class CreateCampaignPage {
 	private WebElement campaignNameTbx;
 	
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
+	//@FindBy(xpath = "//b[text()='Organization Information']/../../preceding-sibling::tr/descendant::input[@title='Save [Alt+S]']")
 	private WebElement saveBtn;
 	
 	@FindBy(xpath = "//input[@name='product_name']/following-sibling::img")

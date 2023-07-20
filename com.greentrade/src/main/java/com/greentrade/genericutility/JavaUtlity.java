@@ -18,7 +18,7 @@ public class JavaUtlity {
 	SimpleDateFormat sim = new SimpleDateFormat("yyyy-MM-dd");
 
 	/**
-	 * generate random number with in the limit of 40000 for very invocation
+	 * generate random number with in the limit of 4000 for very invocation
 	 * 
 	 * @return
 	 */

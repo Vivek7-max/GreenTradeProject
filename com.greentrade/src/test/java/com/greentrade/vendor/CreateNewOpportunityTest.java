@@ -47,7 +47,7 @@ public class CreateNewOpportunityTest extends BaseClass {
 		CreateVendorPage createVendorPage=new CreateVendorPage(driver);
 		createVendorPage.createVendor(vendorName);
 		System.out.println("Vendor Created Successfully..!");
-		Assert.fail();
+		//Assert.fail();
 		
 		/*Create Product*/
 		homePage.getProductsLink().click();

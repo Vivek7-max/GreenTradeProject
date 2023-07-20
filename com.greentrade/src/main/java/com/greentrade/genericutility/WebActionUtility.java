@@ -249,9 +249,6 @@ public class WebActionUtility {
 		js.executeAsyncScript(javaScript, null);
 	}
 
-	   
-
-	    
 	    /**
 	     * pass enter Key appertain in to Browser
 	     * @param driver
@@ -287,12 +284,5 @@ public class WebActionUtility {
 		}
 		return screenShotName;
 	   }
-	   
-	   
-	   
-	   
-	   
-	   
-	   
 	   
 }

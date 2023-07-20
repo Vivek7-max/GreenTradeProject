@@ -59,7 +59,6 @@ public class ListenerImplementation implements ITestListener {
 		report.setSystemInfo("Platform", "Windowns 10");
 		report.setSystemInfo("Executed By", "Vivek A N");
 		report.setSystemInfo("Reviewed By", "Rajesh B");
-		
 	}
 
 	@Override
