@@ -1,22 +1,23 @@
 package com.greentrade.objectrepository;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-public class CreateQuotePage {
+public class CreateSalesOrderPage {
 	@FindBy(name = "subject")
 	private WebElement subjectTbx;
 	
 	@FindBy(xpath = "//input[@title='Save [Alt+S]']")
 	private WebElement saveBtn;
 	
-	@FindBy(xpath = "//input[@name='potential_name']/following-sibling::img")
-	private WebElement selectOpportunityLookupImg;
+	@FindBy(xpath = "//input[@name='quote_name']/following-sibling::img")
+	private WebElement selectQuoteLookupImg;
 	
 	@FindBy(xpath = "//input[@name='contact_name']/following-sibling::img")
 	private WebElement selectContactLookupImg;
+	
+	@FindBy(xpath = "//input[@name='potential_name']/following-sibling::img")
+	private WebElement selectOpportunityLookupImg;
 	
 	@FindBy(xpath = "//input[@name='account_name']/following-sibling::img")
 	private WebElement selectOrgLookupImg;
@@ -36,59 +37,52 @@ public class CreateQuotePage {
 	@FindBy(id = "listPrice1")
 	private WebElement listPriceTbx;
 	
-	
-	public CreateQuotePage(WebDriver driver) {
+	public CreateSalesOrderPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
-
 
 	public WebElement getSubjectTbx() {
 		return subjectTbx;
 	}
 
-
 	public WebElement getSaveBtn() {
 		return saveBtn;
 	}
 
-
-	public WebElement getSelectOpportunityLookupImg() {
-		return selectOpportunityLookupImg;
+	public WebElement getSelectQuoteLookupImg() {
+		return selectQuoteLookupImg;
 	}
-
 
 	public WebElement getSelectContactLookupImg() {
 		return selectContactLookupImg;
 	}
 
+	public WebElement getSelectOpportunityLookupImg() {
+		return selectOpportunityLookupImg;
+	}
 
 	public WebElement getSelectOrgLookupImg() {
 		return selectOrgLookupImg;
 	}
 
-
 	public WebElement getBillingAddressTbx() {
 		return billingAddressTbx;
 	}
-
 
 	public WebElement getCopyBillingAddressRadioBtn() {
 		return copyBillingAddressRadioBtn;
 	}
 
-
 	public WebElement getSelectItemProductLookupImg() {
 		return selectItemProductLookupImg;
 	}
-
 
 	public WebElement getQtyTbx() {
 		return qtyTbx;
 	}
 
-
 	public WebElement getListPriceTbx() {
 		return listPriceTbx;
 	}
-
+	
 }

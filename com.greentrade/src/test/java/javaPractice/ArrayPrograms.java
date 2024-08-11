@@ -118,7 +118,7 @@ public class ArrayPrograms {
 		System.out.println("MulOfFirstThreeMaxNumbers: "+mul);
 	}
 
-	/*Find 1st and 2nd minimum number without using sort*/
+	/*Find 1st and 2 minimum number without using sort*/
 	@Test
 	public void FirstAndSecondMinNumber() {
 		int a[] = {15,5,15,15,8};
@@ -252,5 +252,18 @@ public class ArrayPrograms {
 			System.out.print(i+" ");
 		}
 	}
-
+	/*number of occurrence of element */
+	@Test
+	public void occurance() {
+		int a [] = {1,0,1,0,1,5,3,4,5};
+		for (int i = 0; i < a.length; i++) {
+			int count = 1;
+			for (int j = i+1; j < a.length; j++) {
+				if (a[i]==a[j]) {
+					count++;
+				}
+			}
+			System.out.println("Occurace of "+a[i]+": "+count);
+		}
+	}
 }

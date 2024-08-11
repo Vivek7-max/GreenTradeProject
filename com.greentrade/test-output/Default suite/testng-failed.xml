@@ -3,11 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="javaPractice.ArrayPrograms">
+      <class name="com.greentrade.vendor.CreateNewOpportunityTest">
         <methods>
-          <include name="addTwoArrays"/>
+          <include name="closeDBConnection"/>
+          <include name="login"/>
+          <include name="OpenBrowser"/>
+          <include name="createNewOpportunityTest"/>
+          <include name="closeBrowser"/>
+          <include name="connectToDataBase"/>
+          <include name="logout"/>
         </methods>
-      </class> <!-- javaPractice.ArrayPrograms -->
+      </class> <!-- com.greentrade.vendor.CreateNewOpportunityTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
