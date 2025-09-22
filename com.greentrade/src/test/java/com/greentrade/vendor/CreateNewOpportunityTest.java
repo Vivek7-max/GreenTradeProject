@@ -1,11 +1,10 @@
 package com.greentrade.vendor;
 
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Select; 
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.greentrade.genericutility.BaseClass;
 import com.greentrade.genericutility.ExcelUtlity;
 import com.greentrade.objectrepository.CampaignsPage;
@@ -48,7 +47,6 @@ public class CreateNewOpportunityTest extends BaseClass {
 		CreateVendorPage createVendorPage=new CreateVendorPage(driver);
 		createVendorPage.createVendor(vendorName);
 		System.out.println("Vendor Created Successfully..!");
-		//Assert.fail();
 		
 		/*Create Product*/
 		homePage.getProductsLink().click();
@@ -131,5 +129,4 @@ public class CreateNewOpportunityTest extends BaseClass {
 		Reporter.log("Opportunity is created successfully with requied details..!",true);
 		
 	}
-
 }

@@ -24,9 +24,8 @@ public class ExcelUtlity {
 	 * @param celNum
 	 * @return
 	 * @throws Throwable
-	 * @throws IOException
 	 */
-	public String getDataFromExcel(String filePath , String sheetName, int rowNum , int celNum) throws Throwable, IOException {
+	public String getDataFromExcel(String filePath , String sheetName, int rowNum , int celNum) throws Throwable {
 		FileInputStream fis1 = new FileInputStream(filePath);
 		Workbook wb =  WorkbookFactory.create(fis1);
 	    Sheet sheet = wb.getSheet(sheetName);
